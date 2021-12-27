@@ -56,10 +56,10 @@ function generateElement() {
       if(hash[keys[i][j]]){
         img = createElement('img', { 'src': 'http://' + hash[keys[i][j]] + '/favicon.ico' })
         img.onerror = function(ev){
-          ev.target.src = './dot.png' 
+          ev.target.src = './img/dot.png' 
         }
       }else{
-        img = createElement('img', { 'src': './dot.png' })
+        img = createElement('img', { 'src': './img/dot.png' })
       }
 
       // 创建编辑网页地址的editButton 标签
