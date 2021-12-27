@@ -1,0 +1,291 @@
+/* 样式初始化 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  color: #426696;
+}
+header {
+  background-size: 100%;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+header nav {
+  width: 100%;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+header nav ul {
+  display: flex;
+  width: 750px;
+  margin: 0 auto;
+}
+
+header nav ul li {
+  flex: 1;
+  height: 60px;
+}
+
+.local_home a {
+  display: flex;
+  height: 60px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease-in-out;
+  font-size: 16px;
+  font-family: "system-ui";
+  font-weight: 400;
+}
+
+.local_home a:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: 3px solid #426696;
+}
+
+main {
+  height: 100vh;
+  overflow: hidden;
+}
+.container {
+  transition: all 0.5s;
+}
+.page {
+  height: 100vh;
+  position: relative;
+  width: 100vw;
+  display: flex;
+  padding: 80px;
+}
+
+.page1 {
+  background: linear-gradient(to right top, #c0fff2, #48f1d5);
+}
+
+/* page1 css */
+.sec1_circle1 {
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.3)
+  );
+  height: 20rem;
+  width: 20rem;
+  position: absolute;
+  border-radius: 50%;
+  top: 5%;
+  right: 15%;
+}
+.sec1_circle2 {
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(247, 255, 174, 0.3)
+  );
+  height: 20rem;
+  width: 20rem;
+  position: absolute;
+  border-radius: 50%;
+  bottom: 10%;
+  left: 5%;
+}
+.sec1_circle3 {
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(248, 202, 202, 0.8),
+    rgba(255, 255, 255, 0.3)
+  );
+  height: 20rem;
+  width: 20rem;
+  position: absolute;
+  border-radius: 50%;
+  bottom: -10%;
+  right: 35%;
+}
+
+.page1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.keyboardWrap {
+  display: inline-block;
+  padding: 20px 32px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.row {
+  margin: 16px 0;
+  text-align: center;
+}
+.row:nth-child(2) {
+  margin-left: -35px;
+}
+.row:nth-child(3) {
+  margin-left: -118px;
+}
+
+kbd {
+  margin: 0 6px;
+  text-transform: uppercase;
+  width: 64px;
+  height: 54px;
+  background: #000;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  position: relative;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+kbd button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: none;
+  border-radius: 2px;
+  padding: 4px;
+  font-size: 13px;
+  font-weight: bold;
+}
+kbd:hover > button {
+  display: inline-block;
+}
+kbd img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 2px;
+  bottom: 2px;
+}
+.text {
+  position: absolute;
+  top: 4px;
+  left: 8px;
+}
+.desc {
+  position: absolute;
+  top: 150px;
+  left: 100px;
+  font-size: 18px;
+  color: #000;
+  display: flex;
+  z-index: 100;
+  font-weight: bold;
+}
+.desc .left {
+  margin-right: 6px;
+}
+
+/* canvas css */
+.icon {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #f4b68e;
+}
+.actions {
+  font-size: 1.5em;
+  position: absolute;
+  top: 90px;
+  left: 15px;
+}
+.actions > .icon {
+  padding: 7px;
+  transition: all 0.3s;
+}
+.actions .active {
+  color: red;
+  transform: scale(1.2);
+}
+ul.color {
+  position: absolute;
+  top: 150px;
+  left: 12px;
+}
+ul.color li {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s;
+  border-radius: 50%;
+  margin: 10px;
+}
+#red {
+  background: red;
+}
+#green {
+  background: green;
+}
+#blue {
+  background: blue;
+}
+ul.color li.active {
+  transform: scale(1.2);
+}
+ul.size {
+  position: absolute;
+  top: 112px;
+  right: 28px;
+}
+#thin {
+  width: 20px;
+  border-bottom: 5px solid black;
+  margin: 10px 0;
+}
+#thick {
+  width: 20px;
+  border-bottom: 10px solid black;
+}
+
+/* page2 pikachu css */
+#code {
+  padding-left: 100px;
+  font-size: 14px;
+  color: #000;
+  max-height: 100vh;
+  overflow: hidden;
+  width: 45%;
+}
+.replay {
+  position: absolute;
+  right: 120px;
+  top: 100px;
+  font-size: 16px;
+  background: #abcdef;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* page5 */
+.page5 {
+  background: #e2cbf3;
+  font-size: 22px;
+}
+.page5 span a {
+  color: #f3441c;
+}

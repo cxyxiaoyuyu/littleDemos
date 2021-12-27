@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奇奇怪怪小Demo</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/css_animation.css">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/index.js" defer></script>
+    <script src="js/keyboard.js" defer></script>
+    <script src="js/pikachu.js" defer></script>
+    <script src="//at.alicdn.com/t/font_893205_594erhmpm7j.js" defer></script>
+    <script src="js/canvas.js" defer></script>
+    <style id=style></style>
+
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li class="local_home">
+            <a href="javascript:void(0)">
+              <span class="local_hd">Guide</span>
+              <span class="local_bd">键盘导航</span>
+            </a>
+          </li>
+          <li class="local_home">
+            <a href="#page2">
+              <span class="local_hd">Pikachu</span>
+              <span class="local_bd">送你一只皮卡丘</span>
+            </a>
+          </li>
+          <li class="local_home">
+            <a href="#page3">
+              <span class="local_hd">Canvas</span>
+              <span class="local_bd">Canvas 画板</span>
+            </a>
+          </li>
+          <li class="local_home">
+            <a href="#page4">
+              <span class="local_hd">Css Animation</span>
+              <span class="local_bd">Css 动画</span>
+            </a>
+          </li>
+          <li class="local_home">
+            <a href="#page5">
+              <span class="local_hd">Highchart</span>
+              <span class="local_bd">图表</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="page page1">
+          <div class="keyboardWrap"></div>
+          <div class="desc">
+            <div class="left">PS: </div>
+            <div class="right">
+              <div>按下响应的键盘就可以跳转到相应的页面</div>
+              <div>鼠标浮到键盘上也可以自定义网址哦~</div>
+            </div>
+          </div>
+          <div class="sec1_circle1"></div>
+          <div class="sec1_circle2"></div>
+          <div class="sec1_circle3"></div>
+        </div>
+        <div class="page page2">
+          <pre id=code></pre>
+          <div id=pikaqiu>
+            <button class="replay">重画</button>
+            <div class="pikachuWrap">
+              <div class="nose"></div>
+              <div class="eye left"></div>
+              <div class="eye right"></div>
+              <div class="face left"></div>
+              <div class="face right"></div>
+              <div class="month">
+                <div class="lowlip">
+                  <div class="tongue"></div>
+                </div>
+              </div>
+              <div class="uplip left"></div>
+              <div class="uplip right"></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="page page3">
+          <canvas id=canvas></canvas>
+          <div class="actions">
+            <svg id=pen class="icon active">
+              <use xlink:href="#icon-pen"></use>
+            </svg>
+            <svg id=eraser class="icon">
+              <use xlink:href="#icon-eraser"></use>
+            </svg>
+            <svg id=clear class="icon">
+              <use xlink:href="#icon-clear"></use>
+            </svg>
+            <svg id=down class="icon">
+              <use xlink:href="#icon-down"></use>
+            </svg>
+          </div>
+          <ul class="color">
+            <li id=red></li>
+            <li id=green></li>
+            <li id=blue></li>
+          </ul>
+          <ul class="size">
+            <li id="thin"></li>
+            <li id="thick"></li>
+          </ul>
+        </div>
+        <div class="page page4">
+          <!-- 加载动画 -->
+          <div class="item">
+            <div class="bar_fan loading">
+              <div class=bar></div>
+              <div class=fan>
+                <div class=leaf></div>
+                <div class=leaf></div>
+                <div class=leaf></div>
+                <div class=leaf></div>
+              </div>
+            </div>
+          </div>
+          <!-- 大球吃小球 -->
+          <div class="item ball">
+            <div class=wrap>
+              <div class="big up"></div>
+              <div class="big down"></div>
+              <div class="small a"></div>
+              <div class="small b"></div>
+              <div class="small c"></div>
+              <div class="small d"></div>
+            </div>
+          </div>
+
+          <!-- 小球转圈 -->
+          <div class="item circle_around">
+            <div class="circle"></div>
+          </div>
+
+          <div class="item">
+            <svg width="140" height="140">
+              <circle class="out" cx="70" cy="70" r="60"></circle>
+              <circle class="in" cx="70" cy="70" r="59"></circle>
+              <text x="70" y="75" text-anchor="middle" fill="#1926c3"
+                id="percent">0%</text>
+            </svg>
+            <script>
+               function changeText(){
+                let num = percent.innerHTML.split('%')[0]
+                num = parseInt(num)
+                num += 2
+                percent.innerHTML = num + '%'
+                if(num < 99){
+                  setTimeout(changeText,180)
+                }else{
+                  setTimeout(function(){
+                    percent.innerHTML = '0%'
+                    setTimeout(changeText,180)
+                  },1000)
+                }
+                
+              }
+              setTimeout(changeText,180)
+            </script>
+          </div>
+
+          <!-- clock_loading -->
+          <div class="item clock_loading">
+            <div class=border>
+              <div class=handle></div>
+              <div class="wrap">
+                <div class='circle left'>
+                  <div class="leftCircle"></div>
+                </div>
+                <div class='circle right'>
+                  <div class="rightCircle"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- douban loading -->
+          <div class="item">
+            <svg width="100" height="100">
+              <circle class="mouth" cx="50" cy="50" r="14"></circle>
+              <circle class="eye" cx="50" cy="50" r="14"></circle>
+            </svg>
+          </div>
+
+          <!-- 椭圆形 -->
+          <div class="item elliptical">
+            <div class="ellipse">
+              <div class="circle"></div>
+            </div>
+          </div>
+
+          <!-- 渐变border -->
+          <div class="item">
+            <div class="son-box"></div>
+          </div>
+
+          <!-- ios loadin -->
+          <div class="item">
+            <div class="sk-fading-circle">
+              <div class="sk-circle"></div>
+              <div class="sk-circle"></div>
+              <div class="sk-circle"></div>
+              <div class="sk-circle"></div>
+              <div class="sk-circle"></div>
+              <div class="sk-circle"></div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="taiji"></div>
+          </div>
+
+          <div class="item">
+            <div class="square"></div>
+          </div>
+
+          <div class="item">
+            <div class="spinner">
+              <i></i>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="page page5">
+          <span>
+            哎呀~ 这个页面显示不下啦 <a
+              href="https://cxyxiaoyuyu.github.io/highchart-demo/index.html"
+              target="_blank">请点击跳转-></a>
+          </span>
+        </div>
+      </main>
+
+    </body>
+
+  </html>
