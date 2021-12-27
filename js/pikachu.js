@@ -102,7 +102,7 @@ css = `
   position: absolute;
   width: 28px;
   height: 20px;
-  background: #ffe600;
+  background: #f8f0a9;
   bottom: 14px;
   right: 8px;
 }
